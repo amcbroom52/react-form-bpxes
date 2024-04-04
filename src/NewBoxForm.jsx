@@ -6,6 +6,18 @@ const INITIAL_STATE = {
   backgroundColor: "",
 };
 
+/** Renders a form to create new boxes
+ *
+ * props:
+ * - createBox()
+ *
+ * state:
+ * - formValues
+ *
+ * BoxList -> NewBoxForm
+ *
+ */
+
 function NewBoxForm({ createBox }) {
   const [formValues, setFormValues] = useState(INITIAL_STATE);
 
