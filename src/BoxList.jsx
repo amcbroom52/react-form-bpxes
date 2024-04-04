@@ -17,7 +17,8 @@ function BoxList() {
             height={height}
             backgroundColor={backgroundColor}
             id = {uuid()}
-            removeBox={removeBox} />;
+            removeBox={removeBox}
+            idx = {boxList.length}/>;
 
         setBoxList(currBoxes => [...currBoxes, newBox]);
     }
@@ -27,7 +28,7 @@ function BoxList() {
             <NewBoxForm createBox={createBox} />
             <ul style={{listStyleType: 'none'}}>
                 {boxList.map(box =>
-                    <li>
+                    <li key={uuid()}>
                         {box}
                     </li>)}
             </ul>
