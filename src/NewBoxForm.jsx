@@ -10,16 +10,17 @@ function NewBoxForm({ createBox }) {
   const [formValues, setFormValues] = useState(INITIAL_STATE);
 
   function handleChange(evt) {
-    const {fieldName, fieldValue} = evt.target;
+    const { name, value} = evt.target;
 
     setFormValues(fValues => ({
       ...fValues,
-      [fieldName]: fieldValue
+      [name]:value
     }));
   }
 
   function handleSubmit(evt) {
     evt.preventDefault();
+    console.log("formValues", formValues);
     createBox(formValues);
     setFormValues(INITIAL_STATE);
   }
@@ -33,6 +34,7 @@ function NewBoxForm({ createBox }) {
         name="width"
         onChange={handleChange}
         value={formValues.width} />
+      <br />
 
       <label htmlFor="height">Height:</label>
       <input
@@ -40,6 +42,7 @@ function NewBoxForm({ createBox }) {
         name="height"
         onChange={handleChange}
         value={formValues.height} />
+      <br />
 
       <label htmlFor="background-color">Background Color:</label>
       <input
@@ -47,6 +50,7 @@ function NewBoxForm({ createBox }) {
         name="backgroundColor"
         onChange={handleChange}
         value={formValues.backgroundColor} />
+      <br />
 
       <button type="submit">Add a new box!</button>
 

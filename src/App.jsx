@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import BoxList from './BoxList';
 
 
 /** Component for entire page.
@@ -10,7 +11,9 @@ import { useState } from 'react';
 
 function App() {
 
-  return
+  return (
+    <BoxList />
+  )
 };
 
 export default App;
